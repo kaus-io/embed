@@ -1,7 +1,7 @@
 [versions]
 kotlin = "2.3.21"
 okio = "3.16.2"
-vanniktech-maven-publish = "0.31.0"
+vanniktech-maven-publish = "0.36.0"
 
 [libraries]
 okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
