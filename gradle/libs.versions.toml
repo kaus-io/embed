@@ -1,0 +1,11 @@
+[versions]
+kotlin = "2.3.21"
+okio = "3.16.2"
+
+[libraries]
+okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
+[plugins]
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
