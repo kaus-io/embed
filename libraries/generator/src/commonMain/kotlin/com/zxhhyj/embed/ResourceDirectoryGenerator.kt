@@ -9,7 +9,7 @@ object ResourceDirectoryGenerator {
         appendLine("import com.zxhhyj.embed.Resource")
         appendLine("import com.zxhhyj.embed.ResourceDirectory")
         appendLine()
-        appendLine("public object ResourceDirectory : ResourceDirectory {")
+        appendLine("internal object ResourceDirectory : ResourceDirectory {")
         appendLine("    override val key: String = \"${packageName.replace('.', '-')}\"")
         appendLine("    private val resources: Map<String, Resource> = mapOf(")
         if (mappings.isNotEmpty()) {
