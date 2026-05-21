@@ -17,19 +17,22 @@ class EmbedPlugin : Plugin<Project> {
         }
 
         project.plugins.withId("org.jetbrains.kotlin.jvm") {
-            project.extensions
+            val sourceSets = project.extensions
                 .getByType(KotlinJvmProjectExtension::class.java)
                 .sourceSets
-                .getByName(SourceSet.MAIN_SOURCE_SET_NAME)
-                .kotlin.srcDir(generateTask.map { it.outputDirectory })
+
+            sourceSets.getByName(SourceSet.MAIN_SOURCE_SET_NAME).kotlin.srcDir(generateTask.map { it.outputDirectory })
+            sourceSets.getByName(SourceSet.TEST_SOURCE_SET_NAME).kotlin.srcDir(generateTask.map { it.outputDirectory })
         }
 
         project.plugins.withId("org.jetbrains.kotlin.multiplatform") {
             project.afterEvaluate {
-                project.extensions.getByType(KotlinMultiplatformExtension::class.java)
+                val sourceSets = project.extensions
+                    .getByType(KotlinMultiplatformExtension::class.java)
                     .sourceSets
-                    .getByName("commonMain")
-                    .kotlin.srcDir(generateTask.map { it.outputDirectory })
+
+                sourceSets.getByName("commonMain").kotlin.srcDir(generateTask.map { it.outputDirectory })
+                sourceSets.getByName("commonTest").kotlin.srcDir(generateTask.map { it.outputDirectory })
             }
         }
 

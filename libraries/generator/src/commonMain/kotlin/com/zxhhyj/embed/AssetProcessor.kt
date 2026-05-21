@@ -68,7 +68,7 @@ class AssetProcessor(private val fileSystem: FileSystem = FileSystem.SYSTEM) {
             filePaths.forEach { fileInfo ->
                 val chunkVariableName = "RESOURCE_${size + 1}"
 
-                content.append("public val $chunkVariableName: List<String> = listOf(\n")
+                content.append("internal val $chunkVariableName: List<String> = listOf(\n")
 
                 val chunkBuffer = Buffer()
                 var chunkSize = 0L
