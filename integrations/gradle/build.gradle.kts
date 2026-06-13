@@ -35,9 +35,9 @@ mavenPublishing {
     coordinates(group.toString(), "embed-gradle-plugin", version.toString())
     pom {
         name = "embed-gradle-plugin"
-        description = "Gradle plugin for Embed - integrates resource generation into the build"
+        description = "Gradle plugin for Embed - wires the embed-generator into the JVM / Kotlin Multiplatform build, generates a typed ResourceDirectory from configured resource directories."
         inceptionYear = "2026"
-        url = "https://github.com/zxhhyj/embed"
+        url = "https://github.com/kaus-io/embed"
         licenses {
             license {
                 name = "MIT License"
@@ -47,15 +47,21 @@ mavenPublishing {
         }
         developers {
             developer {
-                id = "zxhhyj"
-                name = "zxhhyj"
-                url = "https://github.com/zxhhyj"
+                id = "WY7XY"
+                name = "WY7XY"
+                url = "https://github.com/WY7XY"
             }
         }
         scm {
-            url = "https://github.com/zxhhyj/embed"
-            connection = "scm:git:git://github.com/zxhhyj/embed.git"
-            developerConnection = "scm:git:ssh://github.com/zxhhyj/embed.git"
+            url = "https://github.com/kaus-io/embed"
+            connection = "scm:git:git://github.com/kaus-io/embed.git"
+            developerConnection = "scm:git:ssh://github.com/kaus-io/embed.git"
+        }
+        issueManagement {
+            url = "https://github.com/kaus-io/embed/issues"
+        }
+        ciManagement {
+            url = "https://github.com/kaus-io/embed/actions"
         }
     }
 }
